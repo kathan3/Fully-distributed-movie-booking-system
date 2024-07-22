@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wallet-service
+spec:
+  selector:
+    app: wallet-service
+  type: LoadBalancer # Expose externally (optional)
+  ports:
+    - port: 8082 # External port (optional)
+      targetPort: 8082 # Book service port

@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: himanshu-wallet-service
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v0
+    kind: himanshu-Deployment
+    name: wallet-service
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 50
+
