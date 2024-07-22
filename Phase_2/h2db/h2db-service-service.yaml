@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: h2db-service
+spec:
+  selector:
+    app: h2db-service
+  type: LoadBalancer # Expose externally (optional)
+  ports:
+    - port: 9082 # External port (optional)
+      targetPort: 9082 # Book service port
