@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: himanshu-user-service
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v0
+    kind: Deployment
+    name: himanshu-user-service
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 50
+
